@@ -7,15 +7,23 @@ import org.togglz.core.context.FeatureContext;
 
 public enum FeatureOptions implements  Feature {
 
-    @EnabledByDefault
-    @Label("First Feature")
-    FEATURE_ONE,
-
-    @EnabledByDefault
     @Label("Greetings Feature")
-    GREETINGSFEATURE;
+    GREETINGSFEATURE,
+
+    @Label("Current TZ Feature")
+    CURRENTTZFEATURE,
+
+    @Label("Time zone conversion")
+    TIMEZONECONVERSION,
+
+    @Label("Customer bean feature")
+    CUSTOMERBEANFEATURE,
+
+    @Label("Product bean feature")
+    PRODUCTBEANFEATURE;
 
     public boolean isActive() {
+        System.out.println("greetings feature check");
         return FeatureContext.getFeatureManager().isActive(this);
     }
 }
